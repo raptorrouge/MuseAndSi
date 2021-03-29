@@ -1,22 +1,25 @@
-function time() {
-    var date_evenement = new Date("Jun 04 00:00:00 2021") ;
+var toReach = new Date("June 04 00:00:00 2021") ;
 
-    var date_actuelle = new Date();
+function countdown() {
 
-    var total_secondes = (date_evenement - date_actuelle) / 1000;
 
-    var prefixe = "Ouverture Dans: ";
-    var jours = Math.floor(total_secondes / (60 * 60 * 24));
-    if (total_secondes > 0)
-    {
-        var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
-        var minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
-        var secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
+    var now = new Date();
 
-        compte_a_rebours.innerHTML = prefixe + jours + ' jours ' + heures + ' heures ' + minutes + ' minutes et ' + secondes + ' secondes.';
+    var diff = Math.floor( (toReach.getTime() - now.getTime()) /1000 );
+    if (diff > 0){
+    var days = Math.floor(diff / (60*60*24));
+    var hours = Math.floor(diff%86400 / 3600);
+    var minutes = Math.floor(diff%3600 / 60);
+    var seconds = diff % 60;
+
+    document.getElementById("Days").innerHTML = days +" d";
+    document.getElementById("Hours").innerHTML = hours+" h";
+    document.getElementById("Minutes").innerHTML = minutes+" m";
+    document.getElementById("Seconds").innerHTML = seconds +" s";
+    } else {
+    document.getElementById("countdown").innerHTML = "Ouvert !";
     }
-    else // Si total_secondes == 0 (puisque l'on a prit sa valeur absolue)
-    {
-        compte_a_rebours.innerHTML = 'Ouvert';
-    }
+
 };
+
+setInterval(countdown, 1000);
