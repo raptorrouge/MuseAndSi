@@ -26,14 +26,14 @@ body > header{
     color: black;
     display: block;
     margin: auto 10px auto 10px;
-    font-size: 50%;
+    font-size: 180%;
 }
 
 #countdown>h2{
     color: darkred;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: 75%;
+    font-size: 100%;
 }
 
 #logo>img{
@@ -64,10 +64,16 @@ body>header>div>button{
 
 /*mise en forme partie 1 à faire*/
 
-
+#première_partie{
+    background-color: white;
+}
 
 
 /*élément 1 mise en forme a revoir*/
+#deuxième_partie{
+    background-color: white;
+}
+
 
 #deuxième_partie > #element1 {
     display: grid;
@@ -87,4 +93,8 @@ body>header>div>button{
 
 #deuxième_partie > #element1 > texte {
     grid-area: texte;
+}
+
+#troisième_partie{
+    background-color: white;
 }
