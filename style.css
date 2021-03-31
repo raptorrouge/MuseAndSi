@@ -1,6 +1,10 @@
+
+
+
 body{
 
 
+    background-color: black;
 }
 
 /* mise en forme barre noir a revoir ?*/
@@ -25,12 +29,14 @@ body > header{
     color: black;
     display: block;
     margin: auto 10px auto 10px;
+    font-size: 180%;
 }
 
 #countdown>h2{
     color: darkred;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 100%;
 }
 
 #logo>img{
@@ -50,7 +56,7 @@ body > header{
 
 body>header>div>button{
     grid-area: button;
-    padding: 10px;
+    padding: 5px;
     border: white solid;
     color: white;
     text-align: center;
@@ -61,10 +67,16 @@ body>header>div>button{
 
 /*mise en forme partie 1 à faire*/
 
-
+#première_partie{
+    background-color: white;
+}
 
 
 /*élément 1 mise en forme a revoir*/
+#deuxième_partie{
+    background-color: white;
+}
+
 
 #deuxième_partie > #element1 {
     display: grid;
@@ -85,3 +97,10 @@ body>header>div>button{
 #deuxième_partie > #element1 > texte {
     grid-area: texte;
 }
+
+#troisième_partie{
+    background-color: white;
+}
+
+
+
