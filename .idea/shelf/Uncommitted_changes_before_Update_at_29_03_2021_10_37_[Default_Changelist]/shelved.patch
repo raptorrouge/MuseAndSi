@@ -1,0 +1,39 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Muse & Si</title>\r\n</head>\r\n<body>\r\n\r\n<script src=\"fonction.js\">\r\n    time();\r\n</script>\r\n\r\n<nav>\r\n\r\n</nav>\r\n\r\n<header>\r\n\r\n    <div class=\"compte_a_rebours\">\r\n\r\n        <script type=\"text/javascript\">\r\n            var compte_a_rebours = document.getElementById(\"compte_a_rebours\");\r\n        </script>\r\n\r\n    </div>\r\n\r\n    <img src=\"\" alt=\"Logo Muse & Si\">\r\n    <button>C'est parti !</button>\r\n\r\n    <div>\r\n\r\n    </div>\r\n</header>\r\n\r\n<div id=\"deuxième_partie\">\r\n    <div></div>\r\n    <div></div>\r\n    <div></div>\r\n    <div></div>\r\n    <div></div>\r\n</div>\r\n\r\n<div id=\"troisième_partie\">\r\n    <div></div>\r\n    <div></div>\r\n    <div></div>\r\n    <div></div>\r\n</div>\r\n    <div class=\"qui_somme_nous\">\r\n        <p>Bonjour. Ce site web a été réalisé par notre projet collectif de second semestre dans le cadre de DUT MMI ( Métiers du Multimdia et de l'Internet ). Nous somme 3 étudiants de première année à l'IUT de Montbéliard : Tania Handré, Jules Crevoisier, David Philippe. Pour toutes questions, nous somme joignables via nos adresses e-mails.</p>\r\n    </div>\r\n<footer>\r\n\r\n\r\n\r\n</footer>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 50a76e9fc4bb063fffb26f0e626e3ead9757d716)
++++ b/index.html	(date 1616839053654)
+@@ -15,6 +15,7 @@
+ </nav>
+ 
+ <header>
++    <a  href="inscription.html" rel=""></a>
+ 
+     <div class="compte_a_rebours">
+ 
+Index: inscription.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/inscription.html b/inscription.html
+new file mode 100644
+--- /dev/null	(date 1616838398148)
++++ b/inscription.html	(date 1616838398148)
+@@ -0,0 +1,10 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++
++</body>
++</html>
+\ No newline at end of file
