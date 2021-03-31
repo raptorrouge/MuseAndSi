@@ -1,6 +1,7 @@
 body{
 
 
+    background-color: black;
 }
 
 /* mise en forme barre noir a revoir ?*/
@@ -25,12 +26,14 @@ body > header{
     color: black;
     display: block;
     margin: auto 10px auto 10px;
+    font-size: 50%;
 }
 
 #countdown>h2{
     color: darkred;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 75%;
 }
 
 #logo>img{
@@ -50,7 +53,7 @@ body > header{
 
 body>header>div>button{
     grid-area: button;
-    padding: 10px;
+    padding: 5px;
     border: white solid;
     color: white;
     text-align: center;
