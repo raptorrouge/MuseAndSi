@@ -17,9 +17,14 @@
 
 
 *{
-    font-family: 'Monserrat', sans-serif;
+    font-family: Monserrat, sans-serif;
     box-sizing: border-box;
 
+}
+h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 body{
@@ -123,9 +128,28 @@ body>header>div>button{
 }
 
 footer {
-
-    background-color: #111;
-    position: fixed;
+    /*background-image: url(images/bubbles-black.jpg);*/
+    text-decoration: none;
+    background-color: black;
+    color: #d9d9d9;
+    position: relative;
     bottom: 0px;
     width: 100%;
+    display: flex;
+}
+.box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box .content {
+    margin: 20px 0 0 0;
+}
+.left .content .social {
+    margin: 20px 0 0 0;
+}
+.left .content .réseaux_sociaux a {
+    padding: 0 2px;
+
+
 }
