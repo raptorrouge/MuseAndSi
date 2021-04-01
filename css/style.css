@@ -1,21 +1,25 @@
 
 
 
-body{
+body {
+    background-color: white;
 
-
-    background-color: black;
 }
 
 /* mise en forme barre noir a revoir ?*/
 
-body > header{
+
+
+
+
+
+header {
     display: grid;
     grid-template-areas: "countdown logo button";
     grid-template-columns: 1fr 1fr 1fr;
     background-color: black;
-    width: 100%;
-    height: 100%;
+    width: 965px;
+
 }
 
 #countdown{
@@ -67,38 +71,90 @@ body>header>div>button{
 
 /*mise en forme partie 1 à faire*/
 
-#première_partie{
+#premiere_partie{
     background-color: white;
 }
 
 
 /*élément 1 mise en forme a revoir*/
-#deuxième_partie{
+#deuxieme_partie{
     background-color: white;
 }
 
 
-#deuxième_partie > #element1 {
+#deuxieme_partie > #element1 {
     display: grid;
-    grid-template-areas:    "vide1 image titre texte vide2";
-    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:    "vide1 image titre"
+                            "vide2 vide3 texte";
+    grid-template-columns: 1fr 2fr 5fr 0fr 0fr 1fr;
 
 }
 
-#deuxième_partie > #element1 > img {
+
+#deuxieme_partie > #element1 > img {
     grid-area: image;
     margin: auto;
 }
 
-#deuxième_partie > #element1 > h2 {
+#deuxieme_partie > #element1 > h2 {
     grid-area: titre;
+    margin: 0;
 }
 
-#deuxième_partie > #element1 > texte {
+
+
+#deuxieme_partie > #element1 > text {
     grid-area: texte;
+    margin-bottom: 300px;
 }
 
-#troisième_partie{
+#deuxieme_partie > #element2 {
+    display: grid;
+    grid-template-areas:    "vide1 titre vide2"
+                            "vide3 texte vide4";
+    grid-template-columns: 3fr 20fr 2fr;
+
+}
+
+#deuxieme_partie > #element2 > h2 {
+    grid-area: titre;
+    margin: 0;
+}
+
+
+#deuxieme_partie > #element2 > text {
+    grid-area: texte;
+    margin-bottom: 300px;
+}
+
+#deuxieme_partie > #element3 {
+    display: grid;
+    grid-template-areas:    "image titre vide1"
+                            "vide2 texte vide3";
+    grid-template-columns: 3fr 6fr 1fr;
+
+}
+
+#deuxieme_partie > #element3 > h2 {
+    grid-area: titre;
+    margin: 0;
+}
+
+
+#deuxieme_partie > #element3 > text {
+    grid-area: texte;
+    margin-bottom: 300px;
+}
+h2 {
+    font-size: 20px;
+}
+
+text {
+    font-size: 14px;
+
+}
+
+#troisieme_partie{
     background-color: white;
 }
 
