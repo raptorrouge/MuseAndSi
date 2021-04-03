@@ -36,10 +36,7 @@ h2 {
     text-transform: uppercase;
 }
 
-body{
 
-    background-color: black;
-}
 
 /* mise en forme barre noir a revoir ?*/
 
@@ -57,13 +54,13 @@ body > header{
     border: white solid;
     border-radius: 25%;
     width: 75%;
-    height: 80%;
+    height: 100%;
     text-align: center;
     background-color: white;
     color: black;
     display: block;
     margin: auto 10px auto 10px;
-    font-size: 180%;
+    font-size: 80%;
 }
 
 #countdown>h2{
@@ -86,18 +83,14 @@ header>a{
 
 }
 header>a>img{
-    width: 30%;
+    width: 60%;
 }
 
-
-
-
-
-#logo-museandsi{}
 
 #button{
     margin: auto 5px auto auto;
     text-align: center;
+    border-radius:  10rem;
 }
 
 body>header>div>button{
@@ -116,6 +109,7 @@ body>header>div>button{
 #premiere_partie{
     background: url("../image/groupe-bleu.jpg") center no-repeat fixed;
     background-size: cover;
+    height: 211px;
 }
 
 
@@ -149,10 +143,7 @@ body>header>div>button{
     margin-bottom: 300px;
 }
 #element2 {
-    display: grid;
-    grid-template-areas:    "vide1 titre vide2"
-                            "vide3 texte vide4";
-    grid-template-columns: 3fr 20fr 2fr;
+
 
 }
 #element2 > h2 {
@@ -243,7 +234,7 @@ body>header>div>button{
 #element6 > img {
     grid-area: image;
     margin: auto;
-    width: 160%;
+    width: 140%;
 }
 
 #element6 > h2 {
@@ -261,6 +252,12 @@ body>header>div>button{
 #troisieme_partie{
     background-color: white;
 }
+.qui_sommes_nous {
+    background-image: url("../image/groupe-violet.jpg");
+    color: #d9d9d9;
+    font-size: 1.125rem;
+
+}
 
 
 footer {
@@ -269,13 +266,12 @@ footer {
     text-decoration: none;
     color: #d9d9d9;
     position: relative;
-    bottom: 0px;
     width: 100%;
     display: flex;
 }
 
 
-/*
+
 .box {
     flex-basis: 50%;
     padding: 10px 20px;
@@ -294,5 +290,4 @@ footer {
 
 
 }
-*/
 
