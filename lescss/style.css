@@ -26,12 +26,12 @@
 
 text, p {
     font-family: 'Monserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 1.125rem;
 
 }
 h2 {
-    font-family: ContrailOne-Regular, sans-serif;
-    font-size: 1.125rem;
+    font-family: ContrailOne-Regular,  "Segoe MDL2 Assets";
+    font-size: 1.25rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -83,7 +83,7 @@ header>a{
 
 }
 header>a>img{
-    width: 60%;
+    width: 80%;
 }
 
 
@@ -109,6 +109,9 @@ body>header>div>button{
 #premiere_partie{
     background: url("../image/groupe-bleu.jpg") center no-repeat fixed;
     background-size: cover;
+    color: #d9d9d9;
+    font-size: 2rem;
+    padding-top: 10%;
     height: 211px;
 }
 
@@ -120,142 +123,122 @@ body>header>div>button{
 
 
 #element1 {
-    display: grid;
-    grid-template-areas:    "vide1 image titre"
-                            "vide2 vide3 texte";
-    grid-template-columns: 1fr 2fr 5fr 0fr 0fr 1fr;
+    position: relative;
+    width: 100%;
+    display: flex;
+
 
 }
 
 #element1 > img {
-    grid-area: image;
-    margin: auto;
-    width: 160%;
-}
-
-#element1 > h2 {
-    grid-area: titre;
-    margin: 0;
+    flex-basis: 50%;
+    width: 30%;
+    margin: 25px;
 }
 
 #element1 > text {
-    grid-area: texte;
-    margin-bottom: 300px;
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 #element2 {
-
-
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 50px;
+    font-family: ContrailOne-Regular, sans-serif;
 }
-#element2 > h2 {
-    grid-area: titre;
-    margin: 0;
-}
+
 #element2 > text {
-    grid-area: texte;
-    margin-bottom: 300px;
+    flex-basis: 50%;
+    padding: 1rem;
 }
 
 #element3 {
-    display: grid;
-    grid-template-areas:    "image titre vide1"
-                            "vide2 texte vide3";
-    grid-template-columns: 3fr 6fr 1fr;
+    position: relative;
+    width: 100%;
+    display: flex;
 
 }
-
-#element3 > h2 {
-    grid-area: titre;
-    margin: 0;
-}
-
-
 #element3 > text {
-    grid-area: texte;
-    margin-bottom: 200px;
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 #element3 img {
-    width: 160%;
-    grid-area: image;
-    margin: auto;
+    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    margin: 25px;
+
 }
 
 #element4 {
-    display: grid;
-    grid-template-areas:    "titre titre titre"
-                            "vide1 texte image";
-    grid-template-columns: 1fr 15fr 11fr;
-
-}
-
-#element4 > h2 {
-    grid-area: titre;
-    margin-left: 280px;
-    margin-bottom: 100px;
-
+    position: relative;
+    width: 100%;
+    display: flex;
 
 }
 #element4 > text {
-    grid-area: texte;
-    margin-bottom: 200px;
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 #element4 img {
-    width: 160%;
-    grid-area: image;
+    width: 60%;
+    height: 100%;
+    flex-basis: 50%;
+    margin: 25px;
 }
 #element5 {
-    display: grid;
-    grid-template-areas:    "image titre vide1"
-                            "vide2 texte vide3";
-    grid-template-columns: 3fr 6fr 1fr;
+    position: relative;
+    width: 100%;
+    display: flex;
 
 }
 #element5 > img {
-    grid-area: image;
-    margin: auto;
-    width: 160%;
+    flex-basis: 50%;
+    width: 50%;
+    margin: 25px;
 }
-
-#element5 > h2 {
-    grid-area: titre;
-    margin: 0;
-}
-
 #element5 > text {
-    grid-area: texte;
-    margin-bottom: 300px;
+    flex-basis: 50%;
+    margin-top: 50px;
 }
 #element6 {
-    display: grid;
-    grid-template-areas:    "titre titre titre"
-                            "vide1 texte image";
-    grid-template-columns: 1fr 15fr 11fr;
+    position: relative;
+    width: 100%;
+    display: flex;
 
 }
 #element6 > img {
-    grid-area: image;
-    margin: auto;
-    width: 140%;
-}
-
-#element6 > h2 {
-    grid-area: titre;
-    margin: 0;
+    flex-basis: 10%;
+    margin: 25px;
+    width: 50%;
 }
 
 #element6 > text {
-    grid-area: texte;
-    margin-bottom: 300px;
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 
 
 #troisieme_partie{
-    background-color: white;
+    background-image: url("../image/violinist-2.jpg");
+    width: 100%;
+
 }
 .qui_sommes_nous {
     background-image: url("../image/groupe-violet.jpg");
     color: #d9d9d9;
     font-size: 1.125rem;
+    padding: 5rem;
 
 }
 
@@ -274,7 +257,7 @@ footer {
 
 .box {
     flex-basis: 50%;
-    padding: 10px 20px;
+    padding: 1rem;
 }
 
 .box .content {
