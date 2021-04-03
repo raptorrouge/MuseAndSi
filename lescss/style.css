@@ -22,6 +22,13 @@
     padding: 0;
 
 }
+
+
+text, p {
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1rem;
+
+}
 h2 {
     font-family: ContrailOne-Regular, sans-serif;
     font-size: 1.125rem;
@@ -118,7 +125,7 @@ body>header>div>button{
 }
 
 
-#deuxieme_partie > #element1 {
+#element1 {
     display: grid;
     grid-template-areas:    "vide1 image titre"
                             "vide2 vide3 texte";
@@ -126,40 +133,38 @@ body>header>div>button{
 
 }
 
-#deuxieme_partie > #element1 > img {
+#element1 > img {
     grid-area: image;
     margin: auto;
+    width: 160%;
 }
 
-#deuxieme_partie > #element1 > h2 {
+#element1 > h2 {
     grid-area: titre;
     margin: 0;
 }
 
-#deuxieme_partie > #element1 > text {
+#element1 > text {
     grid-area: texte;
     margin-bottom: 300px;
 }
-#element1 img {
-    width: 160%;
-}
-#deuxieme_partie > #element2 {
+#element2 {
     display: grid;
     grid-template-areas:    "vide1 titre vide2"
                             "vide3 texte vide4";
     grid-template-columns: 3fr 20fr 2fr;
 
 }
-#deuxieme_partie > #element2 > h2 {
+#element2 > h2 {
     grid-area: titre;
     margin: 0;
 }
-#deuxieme_partie > #element2 > text {
+#element2 > text {
     grid-area: texte;
     margin-bottom: 300px;
 }
 
-#deuxieme_partie > #element3 {
+#element3 {
     display: grid;
     grid-template-areas:    "image titre vide1"
                             "vide2 texte vide3";
@@ -167,26 +172,23 @@ body>header>div>button{
 
 }
 
-#deuxieme_partie > #element3 > h2 {
+#element3 > h2 {
     grid-area: titre;
     margin: 0;
 }
 
 
-#deuxieme_partie > #element3 > text {
+#element3 > text {
     grid-area: texte;
     margin-bottom: 200px;
 }
 #element3 img {
     width: 160%;
-}
-
-#deuxieme_partie > #element3 > img {
     grid-area: image;
     margin: auto;
 }
 
-#deuxieme_partie > #element4 {
+#element4 {
     display: grid;
     grid-template-areas:    "titre titre titre"
                             "vide1 texte image";
@@ -194,36 +196,67 @@ body>header>div>button{
 
 }
 
-#deuxieme_partie > #element4 > h2 {
+#element4 > h2 {
     grid-area: titre;
     margin-left: 280px;
     margin-bottom: 100px;
 
 
 }
-
-
-#deuxieme_partie > #element4 > text {
+#element4 > text {
     grid-area: texte;
     margin-bottom: 200px;
 }
 #element4 img {
     width: 160%;
-}
-
-#deuxieme_partie > #element4 > img {
     grid-area: image;
+}
+#element5 {
+    display: grid;
+    grid-template-areas:    "image titre vide1"
+                            "vide2 texte vide3";
+    grid-template-columns: 3fr 6fr 1fr;
 
 }
-
-h2 {
-    font-size: 20px;
+#element5 > img {
+    grid-area: image;
+    margin: auto;
+    width: 160%;
 }
 
-text {
-    font-size: 14px;
+#element5 > h2 {
+    grid-area: titre;
+    margin: 0;
+}
+
+#element5 > text {
+    grid-area: texte;
+    margin-bottom: 300px;
+}
+#element6 {
+    display: grid;
+    grid-template-areas:    "titre titre titre"
+                            "vide1 texte image";
+    grid-template-columns: 1fr 15fr 11fr;
 
 }
+#element6 > img {
+    grid-area: image;
+    margin: auto;
+    width: 160%;
+}
+
+#element6 > h2 {
+    grid-area: titre;
+    margin: 0;
+}
+
+#element6 > text {
+    grid-area: texte;
+    margin-bottom: 300px;
+}
+
+
 
 #troisieme_partie{
     background-color: white;
