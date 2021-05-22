@@ -37,3 +37,35 @@ CREATE TABLE MUSIQUE (
                          FOREIGN KEY (ID_Post) REFERENCES POST(ID_Post)
 
 );
+INSERT INTO USER VALUES (NULL, 'RAPTOR' ,'TEST',21,'ADMIN');
+INSERT INTO USER VALUES (NULL, 'Philippe ','David',18,'ADMIN');
+INSERT INTO USER VALUES (NULL, 'André ','Tania',19,'ADMIN');
+
+
+
+INSERT INTO POST (CONTENU_POST, ID_User) VALUES ('bonjour, voici ma premier création original raptor production',1);
+INSERT INTO MUSIQUE (ID_Musique, NOM_Musique, TEMPS_Musique, ORIGINAL_Musique, CHEMIN_Musique, ID_Post) VALUES (NULL,'Retour a l\'ère des dinosaures','00:01:30', TRUE,'..',1 )
+
+INSERT INTO follow(ID_Créateur, id_follower) values (1,2);
+INSERT INTO follow(ID_Créateur, id_follower) values (1,3);
+INSERT INTO follow(ID_Créateur, id_follower) values (3,1);
+
+
+select * from POST;
+
+SELECT NOM_MUSIQUE, CONTENU_POST, NOM_User from MUSIQUE,USER,POST WHERE USER.ID_User=POST.ID_User AND musique.ID_Post =post.ID_Post ;
+
+SELECT * from follow;
+
+/*nombre de follower*/
+
+SELECT count(ID_Créateur) AS "nombre follower" , NOM_User from USER, follow WHERE USER.ID_User=follow.ID_Créateur;
+
+/*nom des follower*/
+
+SELECT NOM_User from USER, follow WHERE USER.ID_User=follow.id_follower and NOM_User='Raptor';
+
+/* nombre de Créateur follow*/
+
+SELECT count(ID_Créateur) AS "nombre de créateur follow" from USER, follow WHERE NOM_User='Tania' and USER.ID_User=follow.ID_Créateur;
+
