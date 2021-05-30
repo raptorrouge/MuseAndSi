@@ -17,15 +17,22 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
 $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+var_dump($bdd);
+
+
 $bdd2 = new PDO($dsn, username, password);
 // pour afficher les erreurs
 $bdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
 $bdd2->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$sql = " SELECT EMAIL FROM user";
-$stmt = $bdd->prepare($sql);
-$stmt->execute([1]);
+$bdd3 = new PDO($dsn, username, password);
+// pour afficher les erreurs
+$bdd3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
+$bdd3->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+
 
 
 
