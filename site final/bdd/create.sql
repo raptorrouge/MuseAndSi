@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS museandsi;
+/*DROP DATABASE IF EXISTS museandsi;
 
 CREATE DATABASE museandsi;
-
+*/
 USE museandsi;
 
 DROP TABLE IF Exists USER ;
@@ -63,6 +63,7 @@ CREATE TABLE MUSIQUE (
 
 );
 
+
 CREATE TABLE POST (
 
                       ID_Post INTEGER AUTO_INCREMENT,
@@ -73,14 +74,16 @@ CREATE TABLE POST (
 
 );
 
+
 CREATE TABLE USER(
 
     ID_User INTEGER AUTO_INCREMENT,
-    MDP varchar (50),
-    NOM_User varchar(50),
-    PRENOM_User varchar(50),
+    EMAIL varchar (255),
+    MDP varchar (255),
+    NOM_User varchar(255),
+    PRENOM_User varchar(255),
     AGE_User INTEGER,
-    ROLE_User varchar(50),
+    ROLE_User varchar(255),
     Photo_Profil varchar(255),
     PRIMARY KEY (ID_User)
 );
