@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="museandsi.sqlite" uuid="5587697a-84a0-49e8-9125-a43031fb0086">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\rapto\Desktop\git\MuseAndSi\site final\museandsi.sqlite</jdbc-url>
+    </data-source>
   </component>
 </project>
