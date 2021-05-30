@@ -1,29 +1,54 @@
+DROP DATABASE IF EXISTS museandsi;
+
+CREATE DATABASE museandsi;
+
 USE museandsi;
 
 DROP TABLE IF Exists USER ;
 DROP TABLE IF Exists POST ;
 DROP TABLE IF Exists MUSIQUE ;
 
-CREATE TABLE USER (
 
-    ID_User INTEGER AUTO_INCREMENT,
-    NOM_User varchar(50),
-    PRENOM_User varchar(50),
-    AGE_User INTEGER,
-    ROLE_User varchar(50),
-    PRIMARY KEY (ID_User)
+CREATE TABLE INSTRUMENT (
+
+    Code_Instrument INTEGER AUTO_INCREMENT,
+    Nom_Instrument varchar (50),
+    Type_Instrument varchar(50),
+    PRIMARY KEY (Code_Instrument)
 );
 
 
+CREATE TABLE TYPE_MUSIQUE (
 
-CREATE TABLE POST (
+    Code_Type_Musique INTEGER AUTO_INCREMENT,
+    Nom_Type_Musique varchar (50),
+    PRIMARY KEY (Code_Type_Musique)
+);
 
-                      ID_Post INTEGER AUTO_INCREMENT,
-                      CONTENU_POST text,
-                      ID_User INTEGER,
-                      PRIMARY KEY (ID_Post),
-                      FOREIGN KEY (ID_User) REFERENCES USER(ID_User)
 
+CREATE TABLE GROUPE (
+
+    ID_Groupe INTEGER AUTO_INCREMENT,
+    Nom_Groupe varchar (50),
+    PRIMARY KEY (ID_Groupe)
+);
+
+CREATE TABLE VILLE  (
+    ID_Ville INTEGER AUTO_INCREMENT,
+    Code_Postal INTEGER ,
+    Nom_Ville VARCHAR(50),
+    PRIMARY KEY (ID_Ville)
+);
+
+CREATE TABLE EVENEMENT (
+
+    ID_Evenement INTEGER AUTO_INCREMENT,
+    Nom_Evenement varchar (50),
+    Descrtption_Evenement varchar (255),
+    date_Evenement date,
+    ID_Ville INTEGER,
+    PRIMARY KEY (ID_Evenement),
+    FOREIGN KEY (ID_Ville) REFERENCES VILLE(ID_Ville)
 );
 
 CREATE TABLE MUSIQUE (
@@ -37,35 +62,115 @@ CREATE TABLE MUSIQUE (
                          FOREIGN KEY (ID_Post) REFERENCES POST(ID_Post)
 
 );
-INSERT INTO USER VALUES (NULL, 'RAPTOR' ,'TEST',21,'ADMIN');
-INSERT INTO USER VALUES (NULL, 'Philippe ','David',18,'ADMIN');
-INSERT INTO USER VALUES (NULL, 'André ','Tania',19,'ADMIN');
+
+CREATE TABLE POST (
+
+                      ID_Post INTEGER AUTO_INCREMENT,
+                      CONTENU_POST text,
+                      ID_Musique INTEGER,
+                      PRIMARY KEY (ID_Post),
+                      FOREIGN KEY (ID_Musique) REFERENCES MUSIQUE(ID_Musique)
+
+);
+
+CREATE TABLE USER(
+
+    ID_User INTEGER AUTO_INCREMENT,
+    MDP varchar (50),
+    NOM_User varchar(50),
+    PRENOM_User varchar(50),
+    AGE_User INTEGER,
+    ROLE_User varchar(50),
+    Photo_Profil varchar(255),
+    PRIMARY KEY (ID_User)
+);
+
+CREATE TABLE FOLLOW(
+    ID_User INTEGER,
+    ID_FOLLOW INTEGER,
+    PRIMARY KEY(ID_User,ID_FOLLOW),
+    FOREIGN KEY(ID_User) REFERENCES USER(ID_User),
+    FOREIGN KEY(ID_User) REFERENCES USER(ID_User)
+
+);
+
+CREATE TABLE JOUE_TYPE_MUSIQUE (
+    ID_User INTEGER ,
+    Code_Type_Musique INTEGER,
+    PRIMARY KEY (ID_User,Code_Type_Musique),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User),
+    FOREIGN KEY (Code_Type_Musique) REFERENCES TYPE_MUSIQUE(Code_Type_Musique)
+
+);
+
+CREATE TABLE EST (
+    ID_Groupe INTEGER ,
+    Code_Type_Musique INTEGER,
+    PRIMARY KEY (ID_Groupe,Code_Type_Musique),
+    FOREIGN KEY (ID_Groupe) REFERENCES GROUPE(ID_Groupe),
+    FOREIGN KEY (Code_Type_Musique) REFERENCES TYPE_MUSIQUE(Code_Type_Musique)
+
+);
+
+CREATE TABLE JOUE_INSTRUMENT (
+    ID_User INTEGER ,
+    Code_Instrument INTEGER,
+    PRIMARY KEY (ID_User,Code_Instrument),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User),
+    FOREIGN KEY (Code_Instrument) REFERENCES INSTRUMENT(Code_Instrument)
+
+);
+
+CREATE TABLE AIME (
+    ID_User INTEGER ,
+    Code_Type_Musique INTEGER,
+    PRIMARY KEY (ID_User,Code_Type_Musique),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User),
+    FOREIGN KEY (Code_Type_Musique) REFERENCES TYPE_MUSIQUE(Code_Type_Musique)
+
+);
+
+CREATE TABLE EST_ABONNE_A (
+    ID_User INTEGER ,
+    ID_Groupe INTEGER,
+    PRIMARY KEY (ID_User,ID_Groupe),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User),
+    FOREIGN KEY (ID_Groupe) REFERENCES GROUPE(ID_Groupe)
+);
+
+CREATE TABLE SE_PRODUIT (
+    ID_Evenement INTEGER ,
+    ID_Groupe INTEGER,
+    PRIMARY KEY (ID_Evenement,ID_Groupe),
+    FOREIGN KEY (ID_Evenement) REFERENCES EVENEMENT(ID_Evenement),
+    FOREIGN KEY (ID_Groupe) REFERENCES GROUPE(ID_Groupe)
+);
+
+CREATE TABLE PARTICIPE (
+    ID_Evenement INTEGER ,
+    ID_User INTEGER,
+    PRIMARY KEY (ID_Evenement,ID_User),
+    FOREIGN KEY (ID_Evenement) REFERENCES EVENEMENT(ID_Evenement),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User)
+);
+
+CREATE TABLE PUBLIE (
+    ID_Post INTEGER ,
+    ID_User INTEGER,
+    PRIMARY KEY (ID_Post,ID_User),
+    FOREIGN KEY (ID_Post) REFERENCES POST(ID_Post),
+    FOREIGN KEY (ID_User) REFERENCES USER(ID_User)
+);
+
+CREATE TABLE PUBLIE_GROUPE (
+    ID_Post INTEGER ,
+    ID_Groupe INTEGER,
+    PRIMARY KEY (ID_Post,ID_Groupe),
+    FOREIGN KEY (ID_Post) REFERENCES POST(ID_Post),
+    FOREIGN KEY (ID_Groupe) REFERENCES GROUPE(ID_Groupe)
+);
 
 
 
-INSERT INTO POST (CONTENU_POST, ID_User) VALUES ('bonjour, voici ma premier création original raptor production',1);
-INSERT INTO MUSIQUE (ID_Musique, NOM_Musique, TEMPS_Musique, ORIGINAL_Musique, CHEMIN_Musique, ID_Post) VALUES (NULL,'Retour a l\'ère des dinosaures','00:01:30', TRUE,'..',1 )
 
-INSERT INTO follow(ID_Créateur, id_follower) values (1,2);
-INSERT INTO follow(ID_Créateur, id_follower) values (1,3);
-INSERT INTO follow(ID_Créateur, id_follower) values (3,1);
-
-
-select * from POST;
-
-SELECT NOM_MUSIQUE, CONTENU_POST, NOM_User from MUSIQUE,USER,POST WHERE USER.ID_User=POST.ID_User AND musique.ID_Post =post.ID_Post ;
-
-SELECT * from follow;
-
-/*nombre de follower*/
-
-SELECT count(ID_Créateur) AS "nombre follower" , NOM_User from USER, follow WHERE USER.ID_User=follow.ID_Créateur;
-
-/*nom des follower*/
-
-SELECT NOM_User from USER, follow WHERE USER.ID_User=follow.id_follower and NOM_User='Raptor';
-
-/* nombre de Créateur follow*/
-
-SELECT count(ID_Créateur) AS "nombre de créateur follow" from USER, follow WHERE NOM_User='Tania' and USER.ID_User=follow.ID_Créateur;
 
