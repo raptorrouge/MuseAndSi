@@ -57,22 +57,17 @@ CREATE TABLE MUSIQUE (
                          TEMPS_Musique time,
                          ORIGINAL_Musique BOOLEAN,
                          CHEMIN_Musique varchar(255),
-                         ID_Post INTEGER,
+                         ID_Post int,
+                         CODE_Type_Musique int,
                          PRIMARY KEY (ID_Musique),
-                         FOREIGN KEY (ID_Post) REFERENCES POST(ID_Post)
+                         FOREIGN KEY (CODE_Type_Musique) REFERENCES type_musique(CODE_Type_Musique),
+                         FOREIGN KEY (ID_Post) REFERENCES post(ID_Post)
+
 
 );
 
 
-CREATE TABLE POST (
 
-                      ID_Post INTEGER AUTO_INCREMENT,
-                      CONTENU_POST text,
-                      ID_Musique INTEGER,
-                      PRIMARY KEY (ID_Post),
-                      FOREIGN KEY (ID_Musique) REFERENCES MUSIQUE(ID_Musique)
-
-);
 
 
 CREATE TABLE USER(
@@ -87,6 +82,20 @@ CREATE TABLE USER(
     Photo_Profil varchar(255),
     PRIMARY KEY (ID_User)
 );
+
+CREATE TABLE POST (
+
+                      ID_Post INTEGER AUTO_INCREMENT,
+                      CONTENU_POST text,
+                      ID_User int,
+                      ID_Groupe int,
+                      date_post date,
+                      PRIMARY KEY (ID_Post),
+                      FOREIGN KEY (ID_User) REFERENCES user(ID_User),
+                      FOREIGN KEY (ID_Groupe) REFERENCES groupe(ID_Groupe)
+
+);
+
 
 CREATE TABLE FOLLOW(
     ID_User INTEGER,

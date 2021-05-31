@@ -11,7 +11,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\rapto\Desktop\git\MuseAndSi\site final\museandsi.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/site final/museandsi.sqlite</jdbc-url>
     </data-source>
   </component>
 </project>

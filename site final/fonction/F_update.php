@@ -51,6 +51,7 @@ if ( isset($_POST["mail"]) and isset($_POST["nom"]) and isset($_POST["prenom"]) 
     /*    $bdd->exec($ma_requete);*/
         $stmt = $bdd->prepare($ma_requete);
         $stmt->execute(array((string)$donnees["mail"],$donnees["nom"],$donnees["prenom"],$donnees["age"],$donnees["role"],$_GET['id']));
+        header("location: profil.php?id=".$_GET['id']);
     }
 
 
