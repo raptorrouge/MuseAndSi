@@ -1,28 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Muse N' Si - Accueil</title>
-    <link rel="stylesheet" href="lescss/styles-accueil.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienvenue</title>
+    <link rel="stylesheet" href="lescss/header-footer.css">
+    <link rel="stylesheet" href="lescss/mise-en-forme.css">
+    <link rel="stylesheet" href="lescss/menu.css">
+    <link rel="stylesheet" href="lescss/styles-landing.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
-<body>
-<header>
-    <div><img src="image/logo.png" height="178" width="221" alt="logo"/></div>
-    <form role="search" id="form">
-        <input type="search" id="query" name="q"
-               placeholder="Search..."
-               aria-label="Search through site content">
-        <button>
-            <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
-        </button>
-    </form>
-</header>
+<body class=" ">
+<div id="app">
 
+    <router-view></router-view>
 
+</div>
 
+<!-- les composants utilisés -->
+<script src="page/accueil.vue.js"></script>
+<script src="page/create.vue.js"></script>
+<script src="page/profil.vue.js"></script>
+<script src="page/mentions-legales.vue.js"></script>
+<script src="page/inscription.vue.js"></script>
+<script src="page/connexion.vue.js"></script>
 
-<footer>
+<script>
+    // Les routages / navigation de l'application
+    var routes = [
+        {path: '/',			                    name:"Accueil",		                    component:Accueil},
+        {path: '/create',				        name:"Album",		                    component:Create},
+        {path: '/mentions-legales',				name:"Mentions",		                component:Mentions},
+        {path: '/inscription',				    name:"Inscription",		                component:Inscription},
+        {path: '/connexion',				    name:"Connexion",		                component:Connexion},
+        {path: '/profil',	                    name:"Profil",	                        component:Profil}
+    ]
 
-</footer>
+    // Initialisation du router
+    var router = new VueRouter(
+        {routes: routes}
+    )
+    // La vue de l'application (id="app")
+    var app = new Vue({
+        el:"#app",
+        router:router
+    })
+</script>
 </body>
 </html>

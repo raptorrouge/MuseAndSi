@@ -7,7 +7,7 @@ var Accueil = Vue.component('Accueil',{
         </div>
         <nav class="menu">
             <ul>
-                <li><img class="logogrand" src="images/logo/kikesa%20logo.svg" alt="Logo du site"></li>
+                <li><img class="logogrand" src="image/logomuseandsi.png" alt="Logo du site"></li>
                 <li><router-link
                         class="nav-link"
                         :to="{name:'Accueil'}">
@@ -15,7 +15,7 @@ var Accueil = Vue.component('Accueil',{
 
                 <li><router-link
                         class="nav-link"
-                        :to="{name:'Biographie'}">
+                        :to="{name:'Profil'}">
                     Biographie</router-link></li>
 
                 <li><router-link

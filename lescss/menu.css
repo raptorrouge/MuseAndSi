@@ -1,0 +1,104 @@
+.nav-toggle {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 3vh;
+    left: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+    background-color: black;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    transition: all .4s ease-in-out;
+}
+.nav-toggle-bar::before {
+    content: "";
+    height: 2.5px;
+    top: -10px;
+}
+.nav-toggle-bar::after {
+    content: "";
+    height: 3px;
+    top: 10px;
+}
+
+.menu {
+    background-color: #C21404;
+    opacity: 80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-450rem);
+    transition: all .4s;
+    z-index: 1;
+}
+
+.menu-open .menu {
+    transform: translateY(0);
+}
+
+.menu-open,
+.menu-open body {
+    overflow: hidden;
+}
+
+.menu-open .nav-toggle-bar {
+    transform: rotate(135deg);
+    background-color: black;
+}
+.menu-open .nav-toggle-bar::after,
+.menu-open .nav-toggle-bar::before {
+    transform: rotate(90deg);
+    background-color: black;
+    top: 0;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.3rem;
+    text-transform: uppercase;
+}
+
+.menu li {
+    margin-bottom: 30px;
+    transform: translateY(300px);
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.nav-link {
+    color: white;
+    font-size: 2vw;
+}
+
+.menu-open .menu li {
+    transform: translateY(0);
+    opacity: 1;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 40px;
+    border-bottom: 3px solid white;
+
+}
+.menu-open .menu li:last-child {
+    border-bottom: none;
+}
