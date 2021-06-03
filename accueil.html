@@ -5,91 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Accueil</title>
+    <title>Bienvenue</title>
     <link rel="stylesheet" href="lescss/header-footer.css">
-    <link rel="stylesheet" href="lescss/style.css">
+    <link rel="stylesheet" href="lescss/mise-en-forme.css">
     <link rel="stylesheet" href="lescss/menu.css">
     <link rel="stylesheet" href="lescss/styles-landing.css">
-    <link rel="stylesheet" href="lescss/mise-en-forme.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/vue-router"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
 </head>
 <body class=" ">
 <div id="app">
-    <header>
-    <div class="nav-toggle" onclick="document.documentElement.classList.toggle('menu-open')">
-        <div class="nav-toggle-bar"></div>
-    </div>
-    <nav class="menu">
-        <ul>
-            <li><img class="logogrand" src="page/image/logo.png" alt="Logo du site"></li>
-            <li><router-link
-                    class="nav-link"
-                    :to="{name:'Accueil'}">
-                Accueil</router-link></li>
-
-            <li><router-link
-                    class="nav-link"
-                    :to="{name:'Connexion'}">
-                Connexion</router-link></li>
-
-            <li><router-link
-                    class="nav-link"
-                    :to="{name:'Create'}">
-                Ajouter</router-link></li>
-
-            <li><router-link
-                    class="nav-link"
-                    :to="{name:'Profil'}">
-                Profil</router-link></li>
-        </ul>
-    </nav>
-    <router-link :to="{name:'Accueil'}"><img class="logopetit" id="logosite" src="page/image/logo.png" alt="Logo du site"></router-link>
-    <router-link :to="{name:'Create'}"><img class="logopetit" id="logocreation" src="page/image/guitare.png" alt="Ajouter une musique"></router-link>
-</header>
 
     <router-view></router-view>
-    <footer>
-        <div class="left box">
-            <div class="content">
-                <div class="réseaux_sociaux">
-                    <a class="insta" href="https://www.instagram.com/"><img src="page/image/svg/instagram.svg" alt="Instagram" height="25" width="25"></a>
-                    <a class="twi" href="https://twitter.com/"><img src="page/image/svg/twitter.svg" alt=Twitter" height="27" width="27"></a>
-                    <a class="fb" href="https://www.facebook.com/"><img src="page/image/svg/facebook.svg" alt="Facebook" height="25" width="25"></a>
-                    <a class="mmi" href="http://mmimontbeliard.com/"><img src="page/image/svg/juste-logo-mmi.svg" alt="Site MMI" height="27" width="35"></a>
-                </div>
-                <p class="mail">
-                    david.philippe02@edu.univ-fcomte.fr | harumi25150@gmail.com | jules.crevoisier@edu.univ-fcomte.fr
-                </p>
-            </div>
-        </div>
-        <div class="right box">
-            <h2>Inscrivez vous à notre Newsletters</h2>
-            <div class="content">
-                <form action="#">
-                    <div class="e-mail">
-                        <p class="mail">Votre e-mail</p>
-                        <input type="email" required>
-                    </div>
-                    <div class="btn">
-                        <button type="submit">Adhérer</button>
-                    </div>
-                </form>
-                <a href="mentions-legales.html">mentions legales </a>
 
-            </div>
-        </div>
-    </footer>
 </div>
-
 
 <!-- les composants utilisés -->
 <script src="page/accueil.vue.js"></script>
 <script src="page/create.vue.js"></script>
 <script src="page/profil.vue.js"></script>
+<script src="page/mentions-legales.vue.js"></script>
 <script src="page/inscription.vue.js"></script>
 <script src="page/connexion.vue.js"></script>
 
@@ -98,6 +35,7 @@
     var routes = [
         {path: '/',			                    name:"Accueil",		                    component:Accueil},
         {path: '/create',				        name:"Album",		                    component:Create},
+        {path: '/mentions-legales',				name:"Mentions",		                component:Mentions},
         {path: '/inscription',				    name:"Inscription",		                component:Inscription},
         {path: '/connexion',				    name:"Connexion",		                component:Connexion},
         {path: '/profil',	                    name:"Profil",	                        component:Profil}
