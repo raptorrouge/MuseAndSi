@@ -34,7 +34,7 @@
 }
 
 .menu {
-    background-color: #C21404;
+    background-color: #f5f5f5f5;
     opacity: 80%;
     position: fixed;
     top: 0;
@@ -44,13 +44,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-450rem);
+    transform: translateX(-450rem);
     transition: all .4s;
     z-index: 1;
 }
 
 .menu-open .menu {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .menu-open,
@@ -79,24 +79,24 @@
 
 .menu li {
     margin-bottom: 30px;
-    transform: translateY(300px);
+    transform: translateX(-450rem);
     opacity: 0;
     transition: all .2s ease;
 }
 
 .nav-link {
-    color: white;
+    color: black;
     font-size: 2vw;
 }
 
 .menu-open .menu li {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     text-align: center;
     margin-top: 0;
     padding-top: 0;
     padding-bottom: 40px;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid orangered;
 
 }
 .menu-open .menu li:last-child {
