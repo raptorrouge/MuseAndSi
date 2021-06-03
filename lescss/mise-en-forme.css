@@ -1,51 +1,5 @@
-.logopetit {
+#logosite {
     height: 8vh;
     width: auto;
     padding: 1vh;
 }
-.logogrand {
-    height: 16vh;
-    width: auto;
-    padding: 2vh;
-}
-#logocreation {
-    background-color: transparent;
-    position: fixed;
-    top: 0.5vh;
-    right: 1vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-header {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-body {
-    margin: 0;
-    background-color: #81FFFC;
-}
-button {
-    padding: 1.5vh 4vw 1.5vh 4vw;
-    border: none;
-    border-radius: 15vh;
-    background: #ED6A39;
-    all: unset;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-}
-body>header>div>button{
-    grid-area: button;
-    padding: 5px;
-    border: white solid;
-    color: white;
-    text-align: center;
-    font-size: 4vw;
-    background-color: black;
-}
-
