@@ -8,13 +8,8 @@
     <title>Bienvenue</title>
     <link rel="stylesheet" href="lescss/header-footer.css">
     <link rel="stylesheet" href="lescss/mise-en-forme.css">
-    <link rel="stylesheet" href="lescss/menu.css">
-    <link rel="stylesheet" href="lescss/contact.css">
+    <link rel="stylesheet" href="lescss/style.css">
     <link rel="stylesheet" href="lescss/styles-landing.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://unpkg.com/vue-router"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 <body class=" ">
 <div id="app">
@@ -190,44 +185,12 @@
                         <button type="submit">Adhérer</button>
                     </div>
                 </form>
-                <router-link :to="{name:'Mentions'}">mentions legales </router-link>
+                <a href="mentions-legales.html">mentions legales </a>
 
             </div>
         </div>
     </footer>
 
 </div>
-
-<!-- les composants utilisés -->
-<script src="page/accueil.vue.js"></script>
-<script src="page/create.vue.js"></script>
-<script src="page/contact.vue.js"></script>
-<script src="page/profil.vue.js"></script>
-<script src="page/mentions-legales.vue.js"></script>
-<script src="page/inscription.vue.js"></script>
-<script src="page/connexion.vue.js"></script>
-
-<script>
-    // Les routages / navigation de l'application
-    var routes = [
-        {path: '/accueil',			            name:"Accueil",		                    component:Accueil},
-        {path: '/create',				        name:"Album",		                    component:Create},
-        {path: '/create',				        name:"Album",		                    component:Create},
-        {path: '/mentions',				        name:"Mentions",		                component:Mentions},
-        {path: '/inscription',				    name:"Inscription",		                component:Inscription},
-        {path: '/connexion',				    name:"Connexion",		                component:Connexion},
-        {path: '/profil',	                    name:"Profil",	                        component:Profil}
-    ]
-
-    // Initialisation du router
-    var router = new VueRouter(
-        {routes: routes}
-    )
-    // La vue de l'application (id="app")
-    var app = new Vue({
-        el:"#app",
-        router:router
-    })
-</script>
 </body>
 </html>

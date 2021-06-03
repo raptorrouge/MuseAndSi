@@ -10,13 +10,6 @@ var Inscription = Vue.component('Inscription',{
 
 <br>
 
-<div>
-    <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
-    <label for="subscribeNews">Souhaitez-vous vous abonner à la newsletter ?</label>
-</div>
-
-<br>
-
 <div class="form_group">
     <input type="number" class="form_input" id="telephone" placeholder="Numéro de téléphone" required>
     <label for="telephone" class="form_label">
