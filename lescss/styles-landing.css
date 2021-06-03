@@ -1,33 +1,168 @@
-
-
-form {
-    background-color: #F2F2F2;
-    width: 300px;
-    height: 44px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-input {
-    all: unset;
-    font: 16px system-ui;
-    color: #fff;
+#countdown{
+    grid-area: countdown;
+    border: white solid;
+    border-radius: 25%;
+    width: 75%;
     height: 100%;
+    text-align: center;
+    background-color: white;
+    color: black;
+    display: block;
+    margin: auto 10px auto 10px;
+    font-size: 80%;
+}
+
+#countdown>h2{
+    color: darkred;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 90%;
+}
+
+
+
+
+/*mise en forme partie 1 à faire*/
+
+#premiere_partie{
+    background: url("../page/image/groupe-bleu.jpg") center no-repeat fixed;
+    background-size: cover;
+    color: #d9d9d9;
+    font-size: 2rem;
+    padding-top: 10%;
+    height: 211px;
+}
+
+
+/*élément 1 mise en forme a revoir*/
+#deuxieme_partie{
+    background-color: white;
+}
+
+
+#element1 {
+    position: relative;
     width: 100%;
-    padding: 6px 10px;
+    display: flex;
+
+
 }
 
-::placeholder {
-    color: #707070;
-    opacity: 0.7;
+#element1 > img {
+    flex-basis: 50%;
+    width: 30%;
+    margin: 25px;
 }
 
-svg {
+#element1 > text {
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#element2 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 50px;
+    font-family: ContrailOne-Regular, sans-serif;
+}
+
+#element2 > text {
+    flex-basis: 50%;
+    padding: 1rem;
+}
+
+#element3 {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+}
+#element3 > text {
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#element3 img {
+    width: 50%;
+    height: 100%;
+    flex-basis: 50%;
+    margin: 25px;
+
+}
+
+#element4 {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+}
+#element4 > text {
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+#element4 img {
+    width: 60%;
+    height: 100%;
+    flex-basis: 50%;
+    margin: 25px;
+}
+#element5 {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+}
+#element5 > img {
+    flex-basis: 50%;
+    width: 50%;
+    margin: 25px;
+}
+#element5 > text {
+    flex-basis: 50%;
+    margin-top: 50px;
+}
+#element6 {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+}
+#element6 > img {
+    flex-basis: 10%;
+    margin: 25px;
+    width: 50%;
+}
+
+#element6 > text {
+    flex-basis: 50%;
+    padding: 1rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+
+#troisieme_partie{
+    background-image: url("../page/image/violinist-2.jpg");
+    width: 100%;
+
+}
+.qui_sommes_nous {
+    background-image: url("../page/image/groupe-violet.jpg");
+    color: #d9d9d9;
+    font-size: 1.125rem;
+    padding: 5rem;
+
+}
+/*svg {
     color: #707070;
     fill: currentColor;
     width: 24px;
     height: 24px;
     padding: 10px;
-}
+}*/

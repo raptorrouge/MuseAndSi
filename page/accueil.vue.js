@@ -15,8 +15,10 @@ var Accueil = Vue.component('Accueil',{
                 
     </form>
     
+    
 </div>
     `,
+
     data(){
         return{
         }
