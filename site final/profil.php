@@ -6,6 +6,7 @@ include("pdo.php");
 
 if(isset($_SESSION['id']) AND $_SESSION['id']>0)
 {
+    echo $_SESSION['id'];
 
     $ma_requete=("select * from user where ID_User=".$_SESSION['id'].";");
     $stmt = $bdd->prepare($ma_requete);
@@ -61,6 +62,17 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0)
     </body>
     </html>
 <?php
-}
+}else{
 
 ?>
+
+
+<html>
+<head>
+    <title> Uplaod Musique  </title>
+</head>
+<body>
+<p>Merci de vous connecter <a href="connexion.php"> ici </a></p>
+</body>
+
+<?php } ?>

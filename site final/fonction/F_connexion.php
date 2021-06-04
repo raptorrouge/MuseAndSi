@@ -64,7 +64,7 @@ if ( isset($_POST["mail"]) and isset($_POST["mdp"]) )
            $_SESSION['NOM']=$id['NOM_User'];
            $_SESSION['PRENOM']=$id['PRENOM_User'];
 
-           header("location: profil.php");
+           header("location: accueil.php");
        }
     }
 

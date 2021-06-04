@@ -11,6 +11,7 @@ $target_file="musique/";
 
 var_dump($_FILES);
 
+
 if (isset($_FILES['Musique']) and $_FILES['Musique']['type']=='audio/mpeg'){
 
 
@@ -23,7 +24,7 @@ if (isset($_POST['Nom']) and isset( $_POST['Temps']) and  isset($_POST['Type']) 
 
     $donnees["Nom"]=htmlspecialchars($_POST["Nom"]);
     $donnees["Type"]=strtolower(htmlspecialchars($_POST["Type"]));
-    $donnees["Temps"]=htmlspecialchars($_POST["Temps"]);
+    $donnees["Temps"]=htmlspecialchars("00:".$_POST["Temps"]);
     $donnees["Original"]=htmlspecialchars($_POST["Original"]);
     $date =date("Y-m-d H:i:s");
 
@@ -99,21 +100,25 @@ if (isset($_POST['Nom']) and isset( $_POST['Temps']) and  isset($_POST['Type']) 
             echo "id post =".$idPost;
         }
 
+        if($idPost!=-1){
 
-        $ma_requete2= "INSERT INTO musique(NOM_Musique,TEMPS_Musique,ORIGINAL_Musique,CHEMIN_Musique,ID_Post,CODE_Type_Musique)
-                        value('".$donnees["Nom"]."','".$donnees["Temps"]."','".$donnees["Original"]."','/musique/".$_FILES['Musique']['name']."','".$idPost."','".$codeType."') ;";
-        echo $ma_requete2;
-        $bdd2->exec($ma_requete2);
 
-        echo "<br>".$_FILES["Musique"]["tmp_name"];
+            $ma_requete2= "INSERT INTO musique(NOM_Musique,TEMPS_Musique,ORIGINAL_Musique,CHEMIN_Musique,ID_Post,CODE_Type_Musique)
+                            value('".$donnees["Nom"]."','".$donnees["Temps"]."','".$donnees["Original"]."','/musique/".$_FILES['Musique']['name']."','".$idPost."','".$codeType."') ;";
+            echo $ma_requete2;
+            $bdd2->exec($ma_requete2);
 
-        move_uploaded_file($_FILES["Musique"]["tmp_name"], $target_file.$_FILES['Musique']['name']);
+            echo "<br>".$_FILES["Musique"]["tmp_name"];
 
-        echo "<script> alerte(\"upload OK\") </script>";
+            move_uploaded_file($_FILES["Musique"]["tmp_name"], $target_file.$_FILES['Musique']['name']);
+
+            echo "<script> alerte(\"upload OK\") </script>";
+        }
+    } else{
+        echo "erreur dans la création du post";
     }
 
 
-
-//    header("location : profil.php");
+    header("location : profil.php");
 
 }

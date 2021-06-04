@@ -3,6 +3,8 @@ session_start();
 include ("pdo.php");
 include ("fonction/F_uplaod.php");
 
+
+if(isset($_SESSION['id'])){
 ?>
 
 <html>
@@ -50,3 +52,17 @@ include ("fonction/F_uplaod.php");
     </div>
 </form>
 
+<?php } else{
+
+?>
+
+
+<html>
+<head>
+    <title> Uplaod Musique  </title>
+</head>
+<body>
+<p>Merci de vous connecter <a href="connexion.php"> ici </a></p>
+</body>
+
+<?php } ?>

@@ -1,7 +1,7 @@
-/*DROP DATABASE IF EXISTS museandsi;
+DROP DATABASE IF EXISTS museandsi;
 
 CREATE DATABASE museandsi;
-*/
+
 USE museandsi;
 
 DROP TABLE IF Exists USER ;

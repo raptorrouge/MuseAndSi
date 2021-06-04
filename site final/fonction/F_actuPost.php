@@ -11,6 +11,7 @@ $stmt->execute();
 while($post =$stmt->fetch()){
 
     array_push($tabPost,$post);
+
 }
 /*if ($stmt->num_rows > 0) {
     // output data of each row
