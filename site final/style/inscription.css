@@ -1,0 +1,22 @@
+.row{
+    margin-top: 3vw;
+}
+
+
+.inscritpion{
+
+}
+
+
+input{
+    font-size: 2vw;
+    border-radius: 2.5vw;
+    box-shadow: 0 6px 10px #635D81;
+    border-style: none;
+    text-align: center;
+
+}
+legend{
+    margin:100px 0 3vw 0;
+    text-align: center;
+}

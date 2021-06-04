@@ -1,15 +1,18 @@
 <?php
-session_start();
+
+session_start ();
 
 include("pdo.php");
 
-if(isset($_GET['id']) AND $_GET['id']>0)
+if(isset($_SESSION['id']) AND $_SESSION['id']>0)
 {
-    $ma_requete=("select * from user where ID_User=".$_GET['id'].";");
+
+    $ma_requete=("select * from user where ID_User=".$_SESSION['id'].";");
     $stmt = $bdd->prepare($ma_requete);
     $stmt->execute();
     $user = $stmt->fetch();
-    var_dump($user);
+    $_SESSION['NOM_USER']=$user['NOM_User'];
+    $_SESSION['PRENOM_USER']=$user['PRENOM_User'];
 
 ?>
 
@@ -18,9 +21,9 @@ if(isset($_GET['id']) AND $_GET['id']>0)
         <title> Profil <?php echo $user['NOM_User'] ?> </title>
     </head>
     <body>
-    <form method="post" action="<?php echo "MiseAJourProfil.php?id=".$user['ID_User']; ?>">
+    <form method="post" action="<?php echo "MiseAJourProfil.php" ?>">
         <div class="row">
-            <a href="">accueil</a>
+            <a href="accueil.php">accueil</a>
             <fieldset>
                 <legend>Information</legend>
                 <label>Email :
@@ -48,6 +51,12 @@ if(isset($_GET['id']) AND $_GET['id']>0)
             </fieldset>
         </div>
     </form>
+
+    <?php  if($user['ROLE_User'] == "Musicien") { ?>
+
+        <a href="uplaod.php"> <button> Upload </button></a>
+
+    <?php }   ?>
 
     </body>
     </html>

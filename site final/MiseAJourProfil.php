@@ -1,12 +1,13 @@
 <?php
-session_start();
+
 
 include("pdo.php");
 include ("fonction/F_update.php");
+session_start();
 
-if(isset($_GET['id']) AND $_GET['id']>0)
+if(isset($_SESSION['id']) AND $_SESSION['id']>0)
 {
-    $ma_requete=("select * from user where ID_User=".$_GET['id'].";");
+    $ma_requete=("select * from user where ID_User=".$_SESSION['id'].";");
     $stmt = $bdd->prepare($ma_requete);
     $stmt->execute();
     $user = $stmt->fetch();
@@ -19,7 +20,7 @@ if(isset($_GET['id']) AND $_GET['id']>0)
         <title> Profil <?php echo $user['NOM_User'] ?> </title>
     </head>
     <body>
-    <form method="post" action="<?php echo "MiseAJourProfil.php?id=".$user['ID_User']; ?>">
+    <form method="post" action="<?php echo "MiseAJourProfil.php" ?>">
         <div class="row">
             <a href="">accueil</a>
             <fieldset>
@@ -60,6 +61,7 @@ if(isset($_GET['id']) AND $_GET['id']>0)
                         <?php echo $_POST["role"]; if ($erreurRole){echo ("<div style='color: #ff0000'>Choisisez un role</div>");} else {echo ("<br>");}?>
                     </select>
                 </label>
+                <br>
                 <br>
                 <button type="submit">valider</button>
             </fieldset>

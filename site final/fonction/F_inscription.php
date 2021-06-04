@@ -64,7 +64,9 @@ if ( isset($_POST["mail"]) and isset($_POST["mdp"]) and isset($_POST["nom"]) and
     /*    $bdd->exec($ma_requete);*/
         $stmt = $bdd->prepare($ma_requete);
         $stmt->execute();
-        var_dump($stmt->fetch());    }
+        var_dump($stmt->fetch());
+        header("location: connexion.php");
+    }
 
 
 }
