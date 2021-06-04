@@ -1,7 +1,16 @@
+
+
+
+
 .row{
     margin-top: 3vw;
+    border-radius: 2.5vw;
+    box-shadow: 0 6px 10px #635D81;
 }
 
+fieldset{
+    border: none;
+}
 
 .inscritpion{
 
@@ -9,13 +18,24 @@
 
 
 input{
-    font-size: 2vw;
+    font-size: 1.5vw;
     border-radius: 2.5vw;
     box-shadow: 0 6px 10px #635D81;
     border-style: none;
     text-align: center;
+    margin: 1vw 0;
 
 }
+
+select{
+    font-size: 1.5vw;
+    border-radius: 2.5vw;
+    box-shadow: 0 6px 10px #635D81;
+    border-style: none;
+    text-align: center;
+    margin: 1vw 0;
+}
+
 legend{
     margin:100px 0 3vw 0;
     text-align: center;

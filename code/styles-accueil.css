@@ -1,0 +1,73 @@
+body {
+    width: 1920px;
+    height: 2307px;
+    background-color: #E1E1E1;
+}
+
+body>header>div>a>img {
+    width: 69px;
+    height: 55px;
+    margin-left: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+header {
+    width: 1920px;
+    height: 67px;
+    background: linear-gradient(#EAEAEA, #B3B3B3);
+}
+
+form.recherche {
+
+    background-color: #F2F2F2;
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input.recherche {
+    all: unset;
+    font: 16px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+::placeholder {
+    color: #707070;
+    opacity: 0.7;
+}
+
+button.recherche {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+svg.recherche {
+    color: #707070;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
+
+div#recherche {
+    margin-left: 700px;
+    margin-top: -58px;
+}
+
+div#bloc_comptes_suivis {
+    background: linear-gradient(#9DE0FF, #5B00FF);
+    width: 408px;
+    height: 2307px;
+
+}

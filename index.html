@@ -6,18 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bienvenue</title>
-    <link rel="stylesheet" href="lescss/header-footer.css">
-    <link rel="stylesheet" href="lescss/mise-en-forme.css">
-    <link rel="stylesheet" href="lescss/menu.css">
-    <link rel="stylesheet" href="lescss/contact.css">
+    <link rel="stylesheet" href="lescss/style.css">
     <link rel="stylesheet" href="lescss/styles-landing.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://unpkg.com/vue-router"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
-<body class=" ">
-<div id="app">
+<body>
+<div>
 
     <header>
         <div id="countdown">
@@ -30,31 +23,35 @@
 
         </div>
 
-            <a href="accueil.html"><img class="logo" src="page/image/logo.png" alt="Logo Muse & Si"></a>
+        <a class="logo" href="index.html"><img src="image/logo.png" alt="Logo Muse & Si"></a>
 
 
         <div id="button-commencer">
-                <div class="submit">
-                    <button class="submitBtn" onclick="window.location.href = 'accueil.html';">Commencer</button>
-                </div>
+            <!--onclick="window.alert('cette page est en cours de construction, ' +
+             'merci de revenir vous inscrire à la newsletter a partir du 10 avril 2021' +
+              ' et revenir a partir du 24 avril 2021 pour vous pré-inscrire sur le site web')"-->
+            <button onclick="window.location.href = 'site final/connexion.php';">
+                commencer
+            </button>
         </div>
     </header>
 
     <div id="premiere_partie">
-            <center>
-                <div>
-                    Envie de vous lancer dans la musique ? <span> N'attendez plus. </span>
-                </div>
-                <!-- onclick="window.location.href = 'evenement.html';"-->
-                <div class="submit">
-                    <button class="submitBtn" onclick="window.location.href = 'accueil.html';">Envoyer</button>
-                </div>
-            </center>
+        <center>
+            <div>
+                Envie de vous lancer dans la musique ? <span> N'attendez plus. </span>
+            </div>
+            <!-- onclick="window.location.href = 'evenement.html';"-->
+            <button onclick="window.location.href = 'site final/inscription.php';">
+                C'est parti !
+            </button>
+
+        </center>
     </div>
 
     <div id="deuxieme_partie">
         <div id="element1">
-            <img src="page/image/guitarist-1.jpg" alt="image 1">
+            <img src="image/guitarist-1.jpg" alt="image 1">
 
 
             <text>
@@ -84,6 +81,9 @@
 
         <div id="element3">
 
+
+
+
             <text>
                 <h2>
                     Un réseau social
@@ -93,12 +93,12 @@
                 Personnalisez votre profil : Musicien ou Spectateur.
                 Grâce à nos services d'hébergement audio, vous bénéficierez d'un feed adapté à votre statut.
             </text>
-            <img src="page/image/saxophonist.jpg" alt="image 3">
+            <img src="image/saxophonist.jpg" alt="image 3">
 
         </div>
 
         <div id="element4">
-            <img src="page/image/sunset.jpg" alt="image 4">
+            <img src="image/sunset.jpg" alt="image 4">
 
 
 
@@ -124,11 +124,11 @@
                 Notre plateforme a pour but de promouvoir l'entraide et toutes les formes de musique.
                 Partagez vos contenus, gagnez en notoriété et séduisez-nous !
             </text>
-            <img src="page/image/guitarist-jump.jpg" alt="image 5">
+            <img src="image/guitarist-jump.jpg" alt="image 5">
         </div>
 
         <div id="element6">
-            <img src="page/image/violonist-1.jpg" alt="image 6">
+            <img src="image/violonist-1.jpg" alt="image 6">
 
 
             <text>
@@ -145,7 +145,7 @@
     <div id="troisieme_partie">
         <center>
             <div>
-                <img src="page/image/violinist-2.jpg" alt="image 7">
+                <img src="image/violinist-2.jpg" alt="image 7">
                 <button>
                     Soutenir
                 </button>
@@ -168,10 +168,10 @@
         <div class="left box">
             <div class="content">
                 <div class="réseaux_sociaux">
-                    <a class="insta" href="https://www.instagram.com/"><img src="page/image/svg/instagram.svg" alt="Instagram" height="25" width="25"></a>
-                    <a class="twi" href="https://twitter.com/"><img src="page/image/svg/twitter.svg" alt=Twitter" height="27" width="27"></a>
-                    <a class="fb" href="https://www.facebook.com/"><img src="page/image/svg/facebook.svg" alt="Facebook" height="25" width="25"></a>
-                    <a class="mmi" href="http://mmimontbeliard.com/"><img src="page/image/svg/juste-logo-mmi.svg" alt="Site MMI" height="27" width="35"></a>
+                    <a class="insta" href="https://www.instagram.com/"><img src="image/svg/instagram.svg" alt="Instagram" height="25" width="25"></a>
+                    <a class="twi" href="https://twitter.com/"><img src="image/svg/twitter.svg" alt=Twitter" height="27" width="27"></a>
+                    <a class="fb" href="https://www.facebook.com/"><img src="image/svg/facebook.svg" alt="Facebook" height="25" width="25"></a>
+                    <a class="mmi" href="http://mmimontbeliard.com/"><img src="image/svg/juste-logo-mmi.svg" alt="Site MMI" height="27" width="35"></a>
                 </div>
                 <p class="mail">
                     david.philippe02@edu.univ-fcomte.fr | harumi25150@gmail.com | jules.crevoisier@edu.univ-fcomte.fr
@@ -190,44 +190,12 @@
                         <button type="submit">Adhérer</button>
                     </div>
                 </form>
-                <router-link :to="{name:'Mentions'}">mentions legales </router-link>
+                <a href="mentions-legales.html">mentions legales </a>
 
             </div>
         </div>
     </footer>
 
 </div>
-
-<!-- les composants utilisés -->
-<script src="page/accueil.vue.js"></script>
-<script src="page/create.vue.js"></script>
-<script src="page/contact.vue.js"></script>
-<script src="page/profil.vue.js"></script>
-<script src="page/mentions-legales.vue.js"></script>
-<script src="page/inscription.vue.js"></script>
-<script src="page/connexion.vue.js"></script>
-
-<script>
-    // Les routages / navigation de l'application
-    var routes = [
-        {path: '/accueil',			            name:"Accueil",		                    component:Accueil},
-        {path: '/create',				        name:"Album",		                    component:Create},
-        {path: '/create',				        name:"Album",		                    component:Create},
-        {path: '/mentions',				        name:"Mentions",		                component:Mentions},
-        {path: '/inscription',				    name:"Inscription",		                component:Inscription},
-        {path: '/connexion',				    name:"Connexion",		                component:Connexion},
-        {path: '/profil',	                    name:"Profil",	                        component:Profil}
-    ]
-
-    // Initialisation du router
-    var router = new VueRouter(
-        {routes: routes}
-    )
-    // La vue de l'application (id="app")
-    var app = new Vue({
-        el:"#app",
-        router:router
-    })
-</script>
 </body>
 </html>

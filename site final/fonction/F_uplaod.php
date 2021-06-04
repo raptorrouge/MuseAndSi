@@ -11,19 +11,22 @@ $target_file="musique/";
 
 var_dump($_FILES);
 
-if (isset($_FILES['Musique']) and $_FILES['Musique']['type']=='audio/mpeg'){
+$inipath = php_ini_loaded_file();
 
-
-
+if ($inipath) {
+    echo 'Loaded php.ini: ' . $inipath;
+} else {
+    echo 'A php.ini file is not loaded';
 }
 
 
 
-if (isset($_POST['Nom']) and isset( $_POST['Temps']) and  isset($_POST['Type']) and isset( $_POST['Original']) and  isset($_FILES['Musique'])){
+
+if (isset($_POST) and $_POST['Nom']!="" and $_POST['Temps']!="" and $_POST['Type']!="" and  isset($_FILES['Musique']) and $_FILES['Musique']['name']!=""){
 
     $donnees["Nom"]=htmlspecialchars($_POST["Nom"]);
     $donnees["Type"]=strtolower(htmlspecialchars($_POST["Type"]));
-    $donnees["Temps"]=htmlspecialchars($_POST["Temps"]);
+    $donnees["Temps"]=htmlspecialchars("00:".$_POST["Temps"]);
     $donnees["Original"]=htmlspecialchars($_POST["Original"]);
     $date =date("Y-m-d H:i:s");
 
@@ -38,13 +41,13 @@ if (isset($_POST['Nom']) and isset( $_POST['Temps']) and  isset($_POST['Type']) 
         $erreurFormat= true;
     }
 
-    if (!$erreurNom and !$erreurFormat){
+    if (!$erreurNom ){
         $ma_requete= "SELECT Nom_Type_Musique FROM type_musique;";
 
         $typeMusique = $bdd->prepare($ma_requete);
         $typeMusique->execute();
 
-
+        var_dump($typeMusique);
         while($row = $typeMusique->fetch(PDO::FETCH_ASSOC)){
             var_dump($row);
             foreach($row as $type){
@@ -99,21 +102,26 @@ if (isset($_POST['Nom']) and isset( $_POST['Temps']) and  isset($_POST['Type']) 
             echo "id post =".$idPost;
         }
 
+        if($idPost!=-1){
 
-        $ma_requete2= "INSERT INTO musique(NOM_Musique,TEMPS_Musique,ORIGINAL_Musique,CHEMIN_Musique,ID_Post,CODE_Type_Musique)
-                        value('".$donnees["Nom"]."','".$donnees["Temps"]."','".$donnees["Original"]."','/musique/".$_FILES['Musique']['name']."','".$idPost."','".$codeType."') ;";
-        echo $ma_requete2;
-        $bdd2->exec($ma_requete2);
 
-        echo "<br>".$_FILES["Musique"]["tmp_name"];
 
-        move_uploaded_file($_FILES["Musique"]["tmp_name"], $target_file.$_FILES['Musique']['name']);
+            $ma_requete2= "INSERT INTO musique(NOM_Musique,TEMPS_Musique,ORIGINAL_Musique,CHEMIN_Musique,ID_Post,CODE_Type_Musique)
+                            value('".$donnees["Nom"]."','".$donnees["Temps"]."','".$donnees["Original"]."','/musique/".$_FILES['Musique']['name']."','".$idPost."','".$codeType."') ;";
+            echo $ma_requete2;
+            $bdd2->exec($ma_requete2);
 
-        echo "<script> alerte(\"upload OK\") </script>";
+            echo "<br>".$_FILES["Musique"]["tmp_name"];
+
+            move_uploaded_file($_FILES["Musique"]["tmp_name"], $target_file.$_FILES['Musique']['name']);
+
+            echo "<script> alerte(\"upload OK\") </script>";
+        } else{
+            echo "erreur dans la création du post";
+        }
     }
 
-
-
+//
 //    header("location : profil.php");
 
 }
