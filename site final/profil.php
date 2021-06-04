@@ -3,6 +3,7 @@
 session_start ();
 
 include("pdo.php");
+include("fonction/F_PostUser.php");
 
 if(isset($_SESSION['id']) AND $_SESSION['id']>0)
 {
@@ -57,7 +58,21 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0)
 
         <a href="uplaod.php"> <button> Upload </button></a>
 
-    <?php }   ?>
+        <?php  for($i=0; $i<sizeof($tabPost);$i++) {
+
+            echo "<p>".$tabPost[$i]['date_post']."</p>";
+
+            echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
+
+            echo "<p>".$tabPost[$i]['NOM_Musique']."</p>";
+            echo "<audio controls>";
+
+            echo  "<source src=\"/MuseAndSi/site%20final/".$tabPost[$i]['CHEMIN_Musique']."\">";
+            echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
+
+            echo " </audio>";
+
+        }  }   ?>
 
     </body>
     </html>

@@ -31,6 +31,8 @@ session_start();
 
             echo "<h2>".$tabPost[$i]['NOM_User']." ".$tabPost[$i]['PRENOM_User']."</h2>";
 
+            echo "<p>".$tabPost[$i]['date_post']."</p>";
+
             echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
 
             echo "<p>".$tabPost[$i]['NOM_Musique']."</p>";
