@@ -31,6 +31,24 @@ $bdd3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
 $bdd3->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+$bdd4 = new PDO($dsn, username, password);
+// pour afficher les erreurs
+$bdd4->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
+$bdd4->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$bdd5 = new PDO($dsn, username, password);
+// pour afficher les erreurs
+$bdd5->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
+$bdd5->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$bdd6 = new PDO($dsn, username, password);
+// pour afficher les erreurs
+$bdd6->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// pour récupérer le résultat des requêtes SELECT sous forme de tableaux associatifs
+$bdd6->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 
 
 

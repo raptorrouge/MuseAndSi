@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $erreurMail=false;
 $erreurMdp=false;
 
@@ -23,7 +23,6 @@ if ( isset($_POST["mail"]) and isset($_POST["mdp"]) )
         while ($row = $dataMails->fetch(PDO::FETCH_ASSOC)) {
 
             foreach($row as $mails){
-                var_dump( $row);
                 echo "<br>";
                 if( $donnees["mail"]!=$mails){
                     echo $mails;
@@ -37,6 +36,7 @@ if ( isset($_POST["mail"]) and isset($_POST["mdp"]) )
         $requeteMdp= ("select MDP from user where EMAIL='".$donnees["mail"]."';");
         $dataMDP = $bdd3->prepare($requeteMdp);
         $dataMDP->execute();
+
         while ($row = $dataMDP->fetch(PDO::FETCH_ASSOC)) {
 
             foreach($row as $MDP){
@@ -48,18 +48,23 @@ if ( isset($_POST["mail"]) and isset($_POST["mdp"]) )
         }
     }
 
-
-
-
+//    echo 1;
 
 
     if (!$erreurMail and !$erreurMdp ) {
-        $ma_requete = ("select ID_User from user where '".$donnees["mail"]."'=EMAIL and '".$donnees["mdp"]."'=MDP;"  );
+        $ma_requete = ("select ID_User, NOM_User, PRENOM_User from user where '".$donnees["mail"]."'=EMAIL and '".$donnees["mdp"]."'=MDP;"  );
+
+
 
         $stmt = $bdd->prepare($ma_requete);
         $stmt->execute();
        while($id = $stmt->fetch()){
-           header("location: profil.php?id=".$id['ID_User']);
+           session_start();
+           $_SESSION['id']=$id['ID_User'];
+           $_SESSION['NOM']=$id['NOM_User'];
+           $_SESSION['PRENOM']=$id['PRENOM_User'];
+
+           header("location: profil.php");
        }
     }
 

@@ -23,7 +23,7 @@ include ("fonction/F_actuPost.php");
             echo "<p>".$tabPost[$i]['NOM_Musique']."</p>";
             echo "<audio controls>";
 
-              echo  "<source src=\"/MuseAndSi/site%20final/musique/".$tabPost[$i]['NOM_Musique'].".mp3\">";
+              echo  "<source src=\"/MuseAndSi/site%20final/".$tabPost[$i]['CHEMIN_Musique']."\">";
               echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
 
             echo " </audio>";

@@ -3,10 +3,20 @@ include("pdo.php");
 include("fonction/F_connexion.php");
 ?>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>inscrivez - vous</title>
+    <script src="fonction.js"></script>
+    <link rel="stylesheet" href="style/inscription.css.css">
+</head>
+<body>
+
 <form method="post" action="connexion.php">
     <div class="row">
         <a href="">accueil</a>
-        <fieldset>
+        <fieldset class="inscritpion">
             <legend>Connexion</legend>
             <label>Email
                 <input name="mail" type="text" size=18 value="<?php if(isset($donnees["mail"])){echo ($donnees["mail"]);}?>"/>
