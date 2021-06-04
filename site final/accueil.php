@@ -35,7 +35,7 @@ session_start();
                 </div>
                 <nav class="menu">
                     <ul>
-                        <li><img class="logogrand" src="image/logo_black.png" alt="Logo du site"></li>
+                        <li><img class="logogrand" src="../image/logo_black.png" alt="Logo du site"></li>
                         <li><a href="../site%20final/accueil.php"
                                class="nav-link">
                                 Accueil</a></li>
