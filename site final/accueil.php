@@ -12,7 +12,7 @@ session_start();
     <?php
 
         if (isset($_SESSION['id'])){
-            echo 2;
+
         include("pdo.php");
         include("fonction/F_actuPost.php");
         ?>
@@ -46,8 +46,6 @@ session_start();
         </body>
     <?php
     }else{
-            echo 3;
-
         include("pdo.php");
         include("fonction/F_inscription.php");
         ?>

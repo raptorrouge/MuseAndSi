@@ -1,10 +1,11 @@
 <?php
 session_start();
-include ("pdo.php");
-include ("fonction/F_uplaod.php");
+
 
 
 if(isset($_SESSION['id'])){
+include ("pdo.php");
+include ("fonction/F_uplaod.php");
 ?>
 
 <html>
@@ -12,10 +13,12 @@ if(isset($_SESSION['id'])){
     <title> Uplaod Musique pour le profil <?php echo $_SESSION['NOM']." ".$_SESSION['PRENOM'] ?> </title>
 </head>
 <body>
-<form method="post" action="" enctype="multipart/form-data">
+    <a href="profil.php">profil</a>
+    <a href="accueil.php">accueil</a>
+
+<form method="post" action="uplaod.php" enctype="multipart/form-data">
     <div class="row">
-        <a href="profil.php">profil</a>
-        <a href="accueil.php">accueil</a>
+
         <fieldset>
             <legend>Uplaod pour <?php echo $_SESSION['NOM']." ".$_SESSION['PRENOM'] ?></legend>
             <label>Nom Musique :
