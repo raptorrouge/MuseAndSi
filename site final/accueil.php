@@ -27,7 +27,7 @@ session_start();
 
         <body>
 
-        <?php /*for($i=sizeof($tabPost)-1; $i>=0;$i--)*/ for($i=0; $i<sizeof($tabPost);$i++) {
+        <?php  for($i=0; $i<sizeof($tabPost);$i++) {
 
             echo "<h2>".$tabPost[$i]['NOM_User']." ".$tabPost[$i]['PRENOM_User']."</h2>";
 
