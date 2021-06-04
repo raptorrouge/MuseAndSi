@@ -5,16 +5,10 @@ session_start ();
 include("pdo.php");
 include("fonction/F_PostUser.php");
 
-if(isset($_SESSION['id']) AND $_SESSION['id']>0)
-{
-    echo $_SESSION['id'];
 
-    $ma_requete=("select * from user where ID_User=".$_SESSION['id'].";");
-    $stmt = $bdd->prepare($ma_requete);
-    $stmt->execute();
-    $user = $stmt->fetch();
-    $_SESSION['NOM_USER']=$user['NOM_User'];
-    $_SESSION['PRENOM_USER']=$user['PRENOM_User'];
+
+if(isset($_SESSION['id']) AND $_SESSION['id']>0 and !isset($_GET['nom']))
+{
 
 ?>
 
@@ -77,17 +71,75 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0)
     </body>
     </html>
 <?php
-}else{
+}else if (isset($_SESSION['id']) AND $_SESSION['id']>0 and isset($_GET['nom'])){
+
+if($_GET['nom']==$_SESSION['NOM']){
+    echo "titi";
+    header("location: profil.php");
+}
 
 ?>
 
-
 <html>
 <head>
-    <title> Uplaod Musique  </title>
+    <title> Profil <?php echo $user['NOM_User'] ?> </title>
 </head>
 <body>
-<p>Merci de vous connecter <a href="connexion.php"> ici </a></p>
+
+    <div class="row">
+        <a href="accueil.php">accueil</a>
+        <fieldset>
+            <legend>Information</legend>
+
+            <label>Nom :
+                <?php echo ($user['NOM_User'])?>
+            </label>
+            <br>
+            <label>Prenom :
+                <?php echo ($user['PRENOM_User'])?>
+            </label>
+            <br>
+            <label>Age :
+                <?php echo ($user['AGE_User'])?>
+            </label>
+            <br>
+            <label> Role :
+                <?php echo ($user['ROLE_User'])?>
+            </label>
+            <br>
+
+        </fieldset>
+    </div>
+</form>
+
+    <?php  for($i=0; $i<sizeof($tabPost);$i++) {
+
+        echo "<p>".$tabPost[$i]['date_post']."</p>";
+
+        echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
+
+        echo "<p>".$tabPost[$i]['NOM_Musique']."</p>";
+        echo "<audio controls>";
+
+        echo  "<source src=\"/MuseAndSi/site%20final/".$tabPost[$i]['CHEMIN_Musique']."\">";
+        echo "<p>".$tabPost[$i]['CONTENU_POST']."</p>";
+
+        echo " </audio>";
+
+    }   ?>
+
 </body>
+
+    <?php
+        }else{
+    ?>
+
+    <html>
+    <head>
+        <title> Profil </title>
+    </head>
+    <body>
+    <p>Merci de vous connecter <a href="connexion.php"> ici </a></p>
+    </body>
 
 <?php } ?>

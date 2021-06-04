@@ -29,7 +29,7 @@ session_start();
 
         <?php  for($i=0; $i<sizeof($tabPost);$i++) {
 
-            echo "<h2>".$tabPost[$i]['NOM_User']." ".$tabPost[$i]['PRENOM_User']."</h2>";
+            echo "<h2> <a href='profil.php?nom=".$tabPost[$i]['NOM_User']."'>".$tabPost[$i]['NOM_User']." ".$tabPost[$i]['PRENOM_User']."</a></h2>";
 
             echo "<p>".$tabPost[$i]['date_post']."</p>";
 
